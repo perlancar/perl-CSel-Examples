@@ -8,7 +8,10 @@ package CSel::Examples; # just to make PodWeaver happy
 
 =head1 EXAMPLES
 
-=head2 DATA STRUCTURES
+=head2 Examples against object trees
+
+
+=head2 Examples against regular data structures
 
 The CSel expressions given below will work if you use it with
 L<Data::CSel::WrapStruct> or the CLI's L<jsonsel> or L<yamlsel> or L<ddsel>.
@@ -57,6 +60,55 @@ will give this result:
 
  [81,82,83,84,85,86,87,88,89,90]
  [91,92,93,94,95,96,97,98,99,100]
+
+Given this data structure:
+
+ {
+   "store" : {
+      "bicycle" : [
+         {
+            "color" : "red",
+            "price" : 19.95
+         }
+      ],
+      "book" : [
+         {
+            "category" : "reference",
+            "author" : "Nigel Rees",
+            "title" : "Sayings of the Century",
+            "price" : 8.95
+         },
+         {
+            "category" : "fiction",
+            "author" : "Evelyn Waugh",
+            "title" : "Sword of Honour",
+            "price" : 12.99
+         },
+         {
+            "category" : "fiction",
+            "author" : "Herman Melville",
+            "title" : "Moby Dick",
+            "isbn" : "0-553-21311-3",
+            "price" : 8.99
+         },
+         {
+            "category" : "fiction",
+            "author" : "J. R. R. Tolkien",
+            "title" : "The Lord of the Rings",
+            "isbn" : "0-395-19395-8",
+            "price" : 22.99
+         }
+      ]
+   }
+ }
+
+This expression:
+
+ Hash[has_key("color")]
+
+will give this result:
+
+ {"color":"red", "price":19.95}
 
 
 =head1 SEE ALSO
