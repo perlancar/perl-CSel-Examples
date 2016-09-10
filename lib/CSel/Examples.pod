@@ -110,6 +110,14 @@ will give this result:
 
  {"color":"red", "price":19.95}
 
+This expression:
+
+ Hash[key("price") > 21]
+
+will give this result:
+
+ {"author":"J. R. R. Tolkien","category":"fiction","isbn":"0-395-19395-8","price":22.99,"title":"The Lord of the Rings"}
+
 
 =head1 SEE ALSO
 
